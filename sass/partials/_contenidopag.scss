@@ -67,9 +67,9 @@ h2 {
 .float-button {
     position: fixed;
     transform: translate(108px, 0px);
-    bottom: 4%;
+    bottom: 20%;
     right: 0;
-    width: 150px;
+    width: 175px;
     padding-left: 4px;
     overflow: hidden;
     background-color: #25d366;
@@ -85,17 +85,17 @@ h2 {
     span {
         color: white;
         font-size: 15px;
-        padding-top: 8px;
+        padding-top: 5px;
         padding-bottom: 10px;
         position: absolute;
-        line-height: 16px;
+        line-height: 15px;
         font-weight: bolder;
     }
 
     i {
-        font-size: 30px;
+        font-size: 60px;
         color: white;
-        line-height: 30px;
+        line-height: 45px;
         padding: 10px;
         transform: rotate(0deg);
         transition: all 0.5s ease-in-out;
