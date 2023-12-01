@@ -1,9 +1,31 @@
+@media screen and (min-width: 855px) {
+  .popup {
+    transform: translate(-43%, -50%);
+    width: 500px;
+    height: 500px;
+  }
+  .popup p {
+    margin: 20px 0;
+  }
+}
 @media screen and (max-width: 850px) {
   .contenedor {
     display: block;
   }
   .contenedor-items {
     width: 100% !important;
+  }
+  .popup {
+    transform: translate(-29%, -50%);
+    width: 500px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .popup {
+    transform: translate(-20%, -50%);
+    width: 300px;
+    height: 350px;
   }
 }
 * {
@@ -50,7 +72,6 @@ h2 {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  contain: paint;
 }
 .contenedor .contenedor-items {
   margin-top: 30px;
@@ -124,6 +145,57 @@ h2 {
   transform: rotate(0deg);
   transition: all 0.5s ease-in-out;
   text-align: center;
+}
+
+.popup {
+  background-color: black;
+  padding: 10px 10px;
+  position: sticky;
+  left: 50%;
+  top: 50%;
+  border-radius: 10%;
+  font-family: "Poppins", sans-serif;
+  display: none;
+  text-align: center;
+  z-index: 5;
+}
+.popup .color {
+  background: url(../img/popupimg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10%;
+  width: 100%;
+  height: 100%;
+}
+.popup button {
+  display: block;
+  margin: 0 0 20px auto;
+  padding: 5px;
+  background-color: transparent;
+  font-size: 70px;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.popup h2 {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 10px;
+  font-size: 36px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.popup p {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 10px;
+  font-size: 21px;
+  text-align: center;
+  padding: 5px;
+  line-height: 25px;
+  width: 100%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 footer {
