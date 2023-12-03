@@ -1,3 +1,65 @@
+.publi {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .uno {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border: 2px solid rgba(255, 235, 205, 0.363);
+
+        h2 {
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.223) ;
+        }
+    }
+
+    .dos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 2px solid black;
+        text-transform: uppercase;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .tres {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        list-style-type: none;
+        align-items: center;
+
+        li {
+            border-radius: 10px;
+            padding: 10px;
+            text-transform: uppercase;
+            margin: 5px;
+        }
+    }
+
+}
 
 h2 {
     text-align: center;
