@@ -97,6 +97,14 @@ h2 {
 
             .img-item {
                 width: 100%;
+                transition: .3s;
+                &:hover {
+                    box-shadow: 0 0 20px black;
+                    scale: 1.5;
+                    padding: 0 auto;
+                    margin: 0 auto;
+                    border-radius: 5px;
+                }
             }
             
 
@@ -118,6 +126,8 @@ h2 {
 }
 .float-button {
     position: fixed;
+    animation: slide-in 4000ms;
+    animation-iteration-count: 1;
     transform: translate(108px, 0px);
     bottom: 20%;
     right: 0;
@@ -194,12 +204,14 @@ h2 {
         background-color: rgba(0, 0, 0, 0.39);
         border-radius: 10px;
         font-size: 36px;
+        backdrop-filter: blur(20px);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     p{
         color: white;
         background-color: rgba(0, 0, 0, 0.39);
+        backdrop-filter: blur(20px);
         border-radius: 10px;
         font-size: 21px;
         text-align: center;
