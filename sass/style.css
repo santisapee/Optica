@@ -256,26 +256,14 @@ h2 {
   cursor: pointer;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.popup h2 {
+.popup h3 {
   color: white;
+  padding: 0px;
   background-color: rgba(0, 0, 0, 0.39);
   border-radius: 10px;
   font-size: 36px;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-.popup p {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.39);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-  border-radius: 10px;
-  font-size: 21px;
-  text-align: center;
-  padding: 5px;
-  line-height: 25px;
-  width: 100%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
