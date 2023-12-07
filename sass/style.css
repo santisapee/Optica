@@ -28,9 +28,6 @@
     width: 500px;
     height: 500px;
   }
-  .popup h3 {
-    font-size: 36px;
-  }
 }
 @media screen and (max-width: 500px) {
   .popup {
@@ -39,7 +36,7 @@
     height: 350px;
   }
   .popup h3 {
-    font-size: 26px;
+    font-size: 29px;
   }
 }
 @keyframes slide-in {
