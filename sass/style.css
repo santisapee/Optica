@@ -3,40 +3,12 @@
     justify-content: center;
   }
 }
-@media screen and (min-width: 855px) {
-  .popup {
-    transform: translate(-43%, -50%);
-    width: 500px;
-    height: 500px;
-  }
-  .popup h3 {
-    font-size: 36px;
-  }
-  .popup p {
-    margin: 20px 0;
-  }
-}
 @media screen and (max-width: 850px) {
   .contenedor {
     display: block;
   }
   .contenedor-items {
     width: 100% !important;
-  }
-  .popup {
-    transform: translate(-29%, -50%);
-    width: 500px;
-    height: 500px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .popup {
-    transform: translate(-14%, -50%);
-    width: 300px;
-    height: 350px;
-  }
-  .popup h3 {
-    font-size: 29px;
   }
 }
 @keyframes slide-in {
@@ -190,6 +162,35 @@ h2 {
   font-size: 25px;
   color: black;
   padding: 30px 0;
+}
+
+form#encargos {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+form#encargos fieldset {
+  display: grid;
+  justify-items: center;
+  border: none;
+  background-color: #4f2eae;
+  border-radius: 6px;
+  box-shadow: 0 0 10px black;
+  color: white;
+}
+form#encargos fieldset label {
+  padding: 6px;
+  border: none;
+}
+form#encargos fieldset input {
+  padding: 4px;
+  border: 2px solid;
+}
+form#encargos fieldset button {
+  border: none;
+  box-shadow: 0 0 10px black;
+  padding: 8px 6px;
+  border-radius: 9px;
 }
 
 .popup-btn {

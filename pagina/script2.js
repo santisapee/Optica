@@ -12,16 +12,6 @@ cerrarPopup.onclick = () => {
     contenidoPopup.classList.remove('active');
 }
 
-//Publicidad inicio 
-Swal.fire({
-    title: "¡PROMO APERTURA!",
-    text: "LLEVÁ 2 PARES QUE TE GUSTEN SOLO POR $2.100",
-    imageUrl: "img/popupimg.jpg",
-    imageWidth: 400,
-    imageHeight: 400,
-    imageAlt: "Custom image"
-  });
-
 //Pedido para clientes al mayoreo
 
 class Pedido{
@@ -65,7 +55,5 @@ const btnthx = document.getElementById("btnthx");
 btnthx.onclick = ()=>{
     alert("Tu pedido fue registrado exitosamente!");
 }
-
-
 
 

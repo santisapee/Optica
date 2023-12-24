@@ -116,6 +116,40 @@ h2 {
     padding: 30px 0;
 }
 
+form#encargos {
+  display: flex;
+  justify-content: center;
+  border: none;
+
+  fieldset {
+    display: grid;
+    justify-items: center;
+    border: none;
+    background-color: #4f2eae;
+    border-radius: 6px;
+    box-shadow: 0 0 10px black;
+    color: white;
+    
+    label {
+      padding: 6px;
+      border: none;
+    }
+
+    input {
+      padding: 4px;
+      border: 2px solid;
+    }
+
+    button {
+      border: none;
+      box-shadow: 0 0 10px black;
+      padding: 8px 6px;
+      border-radius: 9px;
+    }
+  }
+
+}
+
 .popup-btn {
   display: flex;
   justify-items: center;

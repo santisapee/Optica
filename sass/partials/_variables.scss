@@ -5,19 +5,7 @@
 }
 
 @media screen and (min-width: 855px) {
-    .popup {
-        transform: translate(-43%, -50%);
-        width: 500px;
-        height: 500px;
 
-        h3 {
-            font-size: 36px;
-        }
-
-        p {
-            margin: 20px 0;
-        }
-    }
 }
 
 @media screen and (max-width: 850px) {
@@ -28,24 +16,9 @@
     .contenedor-items {
         width: 100% !important;
     }
-
-    .popup {
-        transform: translate(-29%, -50%);
-        width: 500px;
-        height: 500px;
-    }
 }
 
 @media screen and (max-width: 500px) {
-    .popup {
-        transform: translate(-14%, -50%);
-        width: 300px;
-        height: 350px;
-
-        h3 {
-            font-size: 29px;
-        }
-    }
 }
 
 @mixin titulos($display, $align) {
