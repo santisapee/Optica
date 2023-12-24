@@ -18,13 +18,6 @@
         <h3>NUESTROS HORARIOS</h3>
         <p>LUNES A VIERNES DE 7:30am a 23:00pm</p>
     </header>
-    
-    <div class="popup">
-        <div class="color">
-            <button id="close">&times;</button>
-            <h3>¡PROMO APERTURA! LLEVÁ 2 PARES QUE TE GUSTEN SOLO POR $2.100</h3>
-        </div>
-    </div>
 
     <div class="main-container">
         <div class="cards">
@@ -74,8 +67,30 @@
       </div>
 
     <h2>NUESTRO CATÁLOGO</h2>
-    
+    <form id="encargos">
+        <fieldset>
+            <label for="nombre">nombre:</label>
+            <input type="text" id="nombre">
+            <label for="cedula">cedula:</label>
+            <input type="text" id="cedula">
+            <label for="modelo">modelo:</label>
+            <input type="text" id="modelo">
+            <label for="cantidad">cantidad:</label>
+            <input type="text" id="cantidad">
+            <button id="btnthx">Hacer Pedido</button>
+        </fieldset>
+    </form>
+
     <section class="contenedor">
+        <button class="popup-btn">ENCARGOS AL POR MAYOR</button>
+        <div class="contenido-popup">
+            <div class="mensaje-popup">
+                <h2>¿Queres hacer un pedido grande?</h2>
+                <p>¡Consultanos por WhatsApp con la palabra "MAYOR"!</p>
+                <p>Encargos de +100</p>
+                <button class="cerrar-popup">Cerrar</button>
+            </div>
+        </div>
         <div class="contenedor-items">
             <div class="item">
                 <span class="titulo-item">Modelo 1</span>
@@ -170,7 +185,7 @@
         </div>
     </section>
 
-    <a href="https://wa.link/bzige6" class="float-button" target="_blank">
+    <a href="#" class="float-button" target="_blank">
         <i class="fa fa-whatsapp"></i>
         <span>WhatsApp<br><small>¡CONSULTANOS<small><br><small>POR CUALQUIER MODELO!</small></span>
     </a>
@@ -363,6 +378,7 @@
             </div>
         </section>
     </footer>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
