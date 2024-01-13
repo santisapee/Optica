@@ -209,69 +209,49 @@ form#encargos {
     transition-delay: .25s;
   }
 }
-.contenedor {
-    max-width: 1200px;
-    padding: 10px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 
-
-    .contenedor-items {
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) minmax(150px, 1fr));
-        grid-gap: 30px;
-        grid-row-gap: 30px;
-        width: 100%;
-        transition: .3s;
-
-        .item {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          max-width: 200px;
-          margin: auto;
-          border: 1px solid grey;
-          border-radius: 10px;
-          padding: 20px;
-          transition: .3s;
-            &:hover {
-              box-shadow: 0 0 10px grey;
-              scale: 1.03;
-            }
-
-            .img-item {
-                width: 100%;
-                transition: .3s;
-                &:hover {
-                    box-shadow: 0 0 20px black;
-                    scale: 1.5;
-                    padding: 0 auto;
-                    margin: 0 auto;
-                    border-radius: 5px;
-                }
-            }
-            
-
-            .titulo-item {
-                display: block;
-                font-weight: bold;
-                text-align: center;
-                text-transform: uppercase;
-            }
-
-            .precio-item {
-                display: block;
-                text-align: center;
-                font-weight: bold;
-                font-size: 22px;
-            }
-        }
-    }
+#carrito {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
 }
+
+#total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#final {
+  background-color: skyblue;
+}
+
+.cantidad {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+button#vaciar-carrito {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Estilos para el total del carrito */
+#final {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .float-button {
     position: fixed;
     animation: slide-in 4000ms;
