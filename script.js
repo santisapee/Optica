@@ -25,10 +25,10 @@ Swal.fire({
 //Pedido para clientes al mayoreo
 
 class Pedido{
-    constructor(modelo,cantidad){
+    constructor(modelo ,cantidad){
         this.nombre = nombre;
         this.cedula = cedula;
-        this.modelo = modelo;
+        this.modelo  = modelo ;
         this.cantidad = cantidad;
     }
 }
@@ -41,19 +41,19 @@ const encargos = document.getElementById("encargos");
         e.preventDefault();
         const nombre = document.getElementById("nombre");
         const cedula = document.getElementById("cedula");
-        const modelo = document.getElementById("modelo");
+        const modelo  = document.getElementById("modelo ");
         const cantidad = document.getElementById("cantidad");
 
         console.log("El nombre del cliente es: " + nombre.value);
         console.log("La cedula del cliente es: " + cedula.value);
-        console.log("El modelo solicitado es: " + modelo.value);
-        console.log("La cantidad solicitada del modelo es de: " + cantidad.value);
+        console.log("El modelo  solicitado es: " + modelo .value);
+        console.log("La cantidad solicitada del modelo  es de: " + cantidad.value);
 
         encargos.reset();
      
     })
 
-const pedido = new Pedido(nombre.value, cedula.value, modelo.value, cantidad.value);
+const pedido = new Pedido(nombre.value, cedula.value, modelo .value, cantidad.value);
 arrayPedidos.push(pedido);
 
 console.log(arrayPedidos);
@@ -66,15 +66,27 @@ btnthx.onclick = ()=>{
     alert("Tu pedido fue registrado exitosamente!");
 }
 
-//funcion carrito en proxesoo
+//funcion carrito
 
 const PRODUCTOS = [
-    {id: 1, nombre: 'modelo1', precio: 1500},
-    {id: 2, nombre: 'modelo2', precio: 1500},
-    {id: 3, nombre: 'modelo3', precio: 1500},
-    {id: 4, nombre: 'modelo4', precio: 1500},
-    {id: 5, nombre: 'modelo5', precio: 1500},
-    {id: 6, nombre: 'modelo6', precio: 1500},
+    {id: 1, nombre: 'modelo 1', precio: 1500, image: './img/Dioxy/Dioxy1.jpeg'},
+    {id: 2, nombre: 'modelo 2', precio: 1500, image: './img/Dioxy/Dioxy2.jpeg'},
+    {id: 3, nombre: 'modelo 3', precio: 1500, image: './img/Dioxy/Dioxy3.jpeg'},
+    {id: 4, nombre: 'modelo 4', precio: 1500, image: './img/Dioxy/Dioxy4.jpeg'},
+    {id: 5, nombre: 'modelo 5', precio: 1500, image: './img/Dioxy/Dioxy5.jpeg'},
+    {id: 6, nombre: 'modelo 6', precio: 1500, image: './img/Dioxy/Dioxy6.jpeg'},
+    {id: 7, nombre: 'modelo 7', precio: 1500, image: './img/Dioxy/Dioxy7.jpeg'},
+    {id: 8, nombre: 'modelo 8', precio: 1500, image: './img/Dioxy/Dioxy8.jpeg'},
+    {id: 9, nombre: 'modelo 9', precio: 1500, image: './img/Dioxy/Dioxy9.jpeg'},
+    {id: 10, nombre: 'modelo 10', precio: 1500, image: './img/Dioxy/Dioxy10.jpeg'},
+    {id: 11, nombre: 'modelo 11', precio: 1500, image: './img/Dioxy/Dioxy11.jpeg'},
+    {id: 12, nombre: 'modelo 12', precio: 1500, image: './img/Dioxy/Dioxy12.jpeg'},
+    {id: 13, nombre: 'modelo 13', precio: 1500, image: './img/Dioxy/Dioxy13.jpeg'},
+    {id: 14, nombre: 'modelo 14', precio: 1500, image: './img/Dioxy/Dioxy14.jpeg'},
+    {id: 15, nombre: 'modelo 15', precio: 1500, image: './img/Dioxy/Dioxy15.jpeg'},
+    {id: 16, nombre: 'modelo 16', precio: 1500, image: './img/Dioxy/Dioxy16.jpeg'},
+    {id: 17, nombre: 'modelo 17', precio: 1500, image: './img/Dioxy/Dioxy17.jpeg'},
+    {id: 18, nombre: 'modelo 18', precio: 1500, image: './img/Dioxy/Dioxy18.jpeg'},
 ];
 
 const carrito = [];
@@ -88,7 +100,7 @@ function renderizarProductos() {
         card.classList.add('card');
         card.innerHTML = `
             <h3>${producto.nombre}</h3>
-            <img src="${producto.image}" alt="">
+            <img src="${producto.image}" alt="${producto.nombre}">
             <p>Precio: $${producto.precio}</p>
             <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
         `;
@@ -100,10 +112,10 @@ function agregarAlCarrito(idProducto) {
     const productoExistente = carrito.find(producto => producto.id === idProducto);
 
     if (productoExistente) {
-        // Si el producto ya está en el carrito, incrementar la cantidad
+
         productoExistente.cantidad++;
     } else {
-        // Si el producto no está en el carrito, agregarlo con cantidad inicial de 1
+
         const productoSeleccionado = PRODUCTOS.find(producto => producto.id === idProducto);
 
         if (productoSeleccionado) {
@@ -124,6 +136,7 @@ function actualizarCarrito() {
         card.classList.add('card');
         card.innerHTML = `
             <h3>${producto.nombre}</h3>
+            <img src="${producto.image}" alt="${producto.nombre}">
             <p>Precio: $${producto.precio.toFixed(0)}</p>
             <div class="cantidad">
                 <button onclick="cambiarCantidad(${producto.id}, '-')">-</button>
@@ -178,4 +191,4 @@ function borrarItemCarrito(idProducto) {
 
 renderizarProductos();
 
-//hacer el json
+//proximamente json con storage

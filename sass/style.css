@@ -168,6 +168,10 @@ form#encargos {
   display: flex;
   justify-content: center;
   border: none;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
 form#encargos fieldset {
   display: grid;
@@ -193,6 +197,7 @@ form#encargos fieldset button {
   border-radius: 9px;
 }
 
+/*publiinicio*/
 .popup-btn {
   display: flex;
   justify-items: center;
@@ -214,7 +219,6 @@ form#encargos fieldset button {
   width: 100%;
   height: 100%;
   Padding: 40px 0px;
-  background: rgba(0, 0, 0, 0.6);
   opacity: 0;
   pointer-events: none;
 }
@@ -251,22 +255,61 @@ form#encargos fieldset button {
   transition-delay: 0.25s;
 }
 
+/*carrito*/
 #carrito {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+}
+#carrito .card {
+  width: 200px;
+}
+#carrito .card p {
+  padding: 3px;
+  font-weight: bold;
 }
 
 #total {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px;
+  background-color: #3fbafe;
+}
+#total .card {
+  width: 200px;
+  height: auto;
+}
+#total .card h3 {
+  font-size: 20px;
+}
+#total .card img {
+  border-radius: 5px;
+}
+#total .card button {
+  border-radius: 5px;
+  background-color: #4f2eae;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#total .card p {
+  padding: 3px;
+  font-weight: bold;
 }
 
 #final {
-  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 20px;
 }
 
+/*logowasap*/
 .float-button {
   position: fixed;
   animation: slide-in 4000ms;

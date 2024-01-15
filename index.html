@@ -67,38 +67,10 @@
       </div>
 
     <h2>NUESTRO CATÁLOGO</h2>
-    <form id="encargos">
-        <fieldset>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre">
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula">
-            <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo">
-            <label for="cantidad">Cantidad:</label>
-            <input type="text" id="cantidad">
-            <button id="btnthx">Hacer Pedido</button>
-        </fieldset>
-    </form>
-
-    <section class="contenedor">
-        <button class="popup-btn">ENCARGOS AL POR MAYOR</button>
-        <div class="contenido-popup">
-            <div class="mensaje-popup">
-                <h2>¿Queres hacer un pedido grande?</h2>
-                <p>¡Consultanos por WhatsApp con la palabra "MAYOR"!</p>
-                <p>Encargos de +100 productos</p>
-                <button class="cerrar-popup">Cerrar</button>
-            </div>
-        </div>
-    </section>
-
+    
     <div id="carrito"></div>
     <div id="total"></div>
     <div id="final"></div>
-    <button id="vaciar-carrito"></button>
-
-
 
     <a href="#" class="float-button" target="_blank">
         <i class="fa fa-whatsapp"></i>
@@ -121,27 +93,50 @@
       </nav>
 
     <div class="cards">
-        <div class="card card-1">
-            <h2 class="card__title">¿TE GUSTO ALGÚN MODELO?</h2>
-            <p class="card__apply">
-                <a class="card__link">¡CONSULTÁNOS POR WhatsApp PARA CONSEGUIRLO!</a>
-            </p>       
-          </div>
           <div class="card card-4">
             <h2 class="card__title">¿Cómo Comprar?</h2>
             <p class="card__apply">
-                <a class="card__link">1 - Apretá el logo de WhatsApp de la derecha</a>
+                <a class="card__link">1 - Agrega al carrito tu producto y selecciona la cantidad</a>
             </p>
             <p class="card__apply">
-                <a class="card__link">2 - Mencioná que modelo/s querés</a>
+                <a class="card__link">2 - Sacale captura al carrito</a>
             </p>
             <p class="card__apply">
-                <a class="card__link">3 - Coordinamos tu pedido!</a>
+                <a class="card__link">3 - Apretá el logo de WhatsApp de la derecha</a>
+            </p>
+            <p class="card__apply">
+                <a class="card__link">4 - Mencioná que modelo/s querés y agrega la captura del carrito</a>
+            </p>
+            <p class="card__apply">
+                <a class="card__link">5 - Coordinamos tu pedido!</a>
             </p>
           </div>
     </div>
 
-    
+    <form id="encargos">
+        <div class="contenido-popup">
+            <div class="mensaje-popup">
+                <h2>¿Queres hacer un pedido grande?</h2>
+                <p>¡Consultanos por WhatsApp con la palabra "MAYOR"!</p>
+                <p>Encargos de +100 unidades</p>
+                <button class="cerrar-popup">Cerrar</button>
+            </div>
+        </div>
+        <fieldset>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula">
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo">
+            <label for="cantidad">Cantidad:</label>
+            <input type="text" id="cantidad">
+            <button id="btnthx">Hacer Pedido</button>
+        </fieldset>
+        <section class="contenedor">
+            <button class="popup-btn">ENCARGOS AL POR MAYOR</button>
+        </section>
+    </form>
     
 
     <footer>

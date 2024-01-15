@@ -120,6 +120,10 @@ form#encargos {
   display: flex;
   justify-content: center;
   border: none;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 
   fieldset {
     display: grid;
@@ -150,6 +154,7 @@ form#encargos {
 
 }
 
+/*publiinicio*/
 .popup-btn {
   display: flex;
   justify-items: center;
@@ -170,7 +175,6 @@ form#encargos {
   width: 100%;
   height: 100%;
   Padding: 40px 0px;
-  background: rgba(0, 0, 0, .6);
   opacity: 0;
   pointer-events: none;
 
@@ -198,6 +202,7 @@ form#encargos {
     }
   }
 }
+
 .active {
   opacity: 1;
   pointer-events: auto;
@@ -210,48 +215,67 @@ form#encargos {
   }
 }
 
+/*carrito*/
+
 #carrito {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+
+  .card {
+    width: 200px;
+
+    p {
+      padding: 3px;
+      font-weight: bold;
+    }
+  }
 }
 
 #total {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px;
+  background-color: #3fbafe;
+
+  .card {
+    width: 200px;
+    height: auto;
+    
+
+    h3{
+      font-size: 20px;
+    }
+    img{
+      border-radius: 5px;
+    }
+    button{
+      border-radius: 5px;
+      background-color: #4f2eae;
+      color: white;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    p {
+      padding: 3px;
+      font-weight: bold;
+    }
+  }
 }
 
 #final {
-  background-color: skyblue;
-}
-
-.cantidad {
   display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-button#vaciar-carrito {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-/* Estilos para el total del carrito */
-#final {
-  margin-top: 20px;
-  font-size: 18px;
+  justify-content: center;
+  font-size: 28px;
   font-weight: bold;
+  padding: 20px;
 }
 
+/*logowasap*/
 .float-button {
     position: fixed;
     animation: slide-in 4000ms;
