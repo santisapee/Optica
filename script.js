@@ -68,7 +68,7 @@ btnthx.onclick = ()=>{
 
 //funcion carrito
 
-const PRODUCTOS = [
+const PRODUCTOS_LIST = [
     {id: 1, nombre: 'modelo 1', precio: 1500, image: './img/Dioxy/Dioxy1.jpeg'},
     {id: 2, nombre: 'modelo 2', precio: 1500, image: './img/Dioxy/Dioxy2.jpeg'},
     {id: 3, nombre: 'modelo 3', precio: 1500, image: './img/Dioxy/Dioxy3.jpeg'},
@@ -89,13 +89,13 @@ const PRODUCTOS = [
     {id: 18, nombre: 'modelo 18', precio: 1500, image: './img/Dioxy/Dioxy18.jpeg'},
 ];
 
-const carrito = [];
+let CARRITO = [];
 
 function renderizarProductos() {
     const carritoElement = document.getElementById('carrito');
     carritoElement.innerHTML = '';
 
-    PRODUCTOS.forEach(producto => {
+    PRODUCTOS_LIST.forEach(producto => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -109,17 +109,15 @@ function renderizarProductos() {
 }
 
 function agregarAlCarrito(idProducto) {
-    const productoExistente = carrito.find(producto => producto.id === idProducto);
+    const productoExistente = CARRITO.find(producto => producto.id === idProducto);
 
     if (productoExistente) {
-
         productoExistente.cantidad++;
     } else {
-
-        const productoSeleccionado = PRODUCTOS.find(producto => producto.id === idProducto);
+        const productoSeleccionado = PRODUCTOS_LIST.find(producto => producto.id === idProducto);
 
         if (productoSeleccionado) {
-            carrito.push({ ...productoSeleccionado, cantidad: 1 });
+            CARRITO.push({ ...productoSeleccionado, cantidad: 1 });
         }
     }
 
@@ -131,7 +129,7 @@ function actualizarCarrito() {
     const carritoElement = document.getElementById('total');
     carritoElement.innerHTML = '';
 
-    carrito.forEach(producto => {
+    CARRITO.forEach(producto => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -149,21 +147,40 @@ function actualizarCarrito() {
     });
 
     sumarTotal();
+
+    const botonPedido = document.getElementById('botonPedido');
+    botonPedido.style.display = CARRITO.length > 0 ? 'block' : 'none';
+}
+
+
+function guardarCarritoEnLocalStorage() {
+    console.log('Antes de guardar en localStorage:', CARRITO);
+    localStorage.setItem('carrito', JSON.stringify(CARRITO));
+    console.log('Después de guardar en localStorage:', CARRITO);
+}
+
+function cargarCarritoDesdeLocalStorage() {
+    const carritoGuardado = localStorage.getItem('carrito');
+
+    if (carritoGuardado) {
+        CARRITO = JSON.parse(carritoGuardado);
+        actualizarCarrito();
+    }
 }
 
 function cambiarCantidad(idProducto, operacion) {
-    const index = carrito.findIndex(producto => producto.id === idProducto);
+    const index = CARRITO.findIndex(producto => producto.id === idProducto);
 
     if (index !== -1) {
         switch (operacion) {
             case '+':
-                carrito[index].cantidad++;
+                CARRITO[index].cantidad++;
                 break;
             case '-':
-                carrito[index].cantidad--;
+                CARRITO[index].cantidad--;
 
-                if (carrito[index].cantidad <= 0) {
-                    carrito.splice(index, 1);
+                if (CARRITO[index].cantidad <= 0) {
+                    CARRITO.splice(index, 1);
                 }
                 break;
             default:
@@ -176,17 +193,29 @@ function cambiarCantidad(idProducto, operacion) {
 
 function sumarTotal() {
     const totalElement = document.getElementById('final');
-    const total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
+    const total = CARRITO.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
     totalElement.innerHTML = `<div>Total: $${total.toFixed(0)}</div>`;
 }
 
+
 function borrarItemCarrito(idProducto) {
-    const index = carrito.findIndex(producto => producto.id === idProducto);
+    const index = CARRITO.findIndex(producto => producto.id === idProducto);
 
     if (index !== -1) {
-        carrito.splice(index, 1);
+        CARRITO.splice(index, 1);
         actualizarCarrito();
     }
+}
+
+function hacerPedido() {
+    alert('¡Pedido realizado con éxito!');  // Puedes ajustar esto según tus necesidades
+    guardarCarritoEnLocalStorage();  // Guarda el carrito en el localStorage después de hacer el pedido
+    limpiarCarrito();  // Opcional: limpia el carrito después de hacer el pedido
+}
+
+function limpiarCarrito() {
+    CARRITO = [];
+    actualizarCarrito();
 }
 
 renderizarProductos();

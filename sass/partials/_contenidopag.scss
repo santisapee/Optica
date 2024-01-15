@@ -275,6 +275,19 @@ form#encargos {
   padding: 20px;
 }
 
+#botonPedidoContainer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+    button {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 15px;
+    }
+  }
+
 /*logowasap*/
 .float-button {
     position: fixed;
