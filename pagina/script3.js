@@ -59,24 +59,24 @@ btnthx.onclick = ()=>{
 //funcion carrito
 
 const PRODUCTOS_LIST = [
-    {id: 1, nombre: 'modelo 19', precio: 1500, image: '../img/Dioxy/Dioxy19.jpeg'},
-    {id: 2, nombre: 'modelo 20', precio: 1500, image: '../img/Dioxy/Dioxy20.jpeg'},
-    {id: 3, nombre: 'modelo 21', precio: 1500, image: '../img/Dioxy/Dioxy21.jpeg'},
-    {id: 4, nombre: 'modelo 22', precio: 1500, image: '../img/Dioxy/Dioxy22.jpeg'},
-    {id: 5, nombre: 'modelo 23', precio: 1500, image: '../img/Dioxy/Dioxy23.jpeg'},
-    {id: 6, nombre: 'modelo 24', precio: 1500, image: '../img/Dioxy/Dioxy24.jpeg'},
-    {id: 7, nombre: 'modelo 25', precio: 1500, image: '../img/Dioxy/Dioxy25.jpeg'},
-    {id: 8, nombre: 'modelo 26', precio: 1500, image: '../img/Dioxy/Dioxy26.jpeg'},
-    {id: 9, nombre: 'modelo 27', precio: 1500, image: '../img/Dioxy/Dioxy27.jpeg'},
-    {id: 10, nombre: 'modelo 28', precio: 1500, image: '../img/Dioxy/Dioxy28.jpeg'},
-    {id: 11, nombre: 'modelo 29', precio: 1500, image: '../img/Dioxy/Dioxy29.jpeg'},
-    {id: 12, nombre: 'modelo 30', precio: 1500, image: '../img/Dioxy/Dioxy30.jpeg'},
-    {id: 13, nombre: 'modelo 31', precio: 1500, image: '../img/Dioxy/Dioxy31.jpeg'},
-    {id: 14, nombre: 'modelo 32', precio: 1500, image: '../img/Dioxy/Dioxy32.jpeg'},
-    {id: 15, nombre: 'modelo 33', precio: 1500, image: '../img/Dioxy/Dioxy33.jpeg'},
-    {id: 16, nombre: 'modelo 34', precio: 1500, image: '../img/Dioxy/Dioxy34.jpeg'},
-    {id: 17, nombre: 'modelo 35', precio: 1500, image: '../img/Dioxy/Dioxy35.jpeg'},
-    {id: 18, nombre: 'modelo 36', precio: 1500, image: '../img/Dioxy/Dioxy36.jpeg'},
+    {id: 1, nombre: 'modelo 37', precio: 1500, image: '../img/Dioxy/Dioxy37.jpeg'},
+    {id: 2, nombre: 'modelo 38', precio: 1500, image: '../img/Dioxy/Dioxy38.jpeg'},
+    {id: 3, nombre: 'modelo 39', precio: 1500, image: '../img/Dioxy/Dioxy39.jpeg'},
+    {id: 4, nombre: 'modelo 40', precio: 1500, image: '../img/Dioxy/Dioxy40.jpeg'},
+    {id: 5, nombre: 'modelo 41', precio: 1500, image: '../img/Dioxy/Dioxy41.jpeg'},
+    {id: 6, nombre: 'modelo 42', precio: 1500, image: '../img/Dioxy/Dioxy42.jpeg'},
+    {id: 7, nombre: 'modelo 43', precio: 1500, image: '../img/Dioxy/Dioxy43.jpeg'},
+    {id: 8, nombre: 'modelo 44', precio: 1500, image: '../img/Dioxy/Dioxy44.jpeg'},
+    {id: 9, nombre: 'modelo 45', precio: 1500, image: '../img/Dioxy/Dioxy45.jpeg'},
+    {id: 10, nombre: 'modelo 46', precio: 1500, image: '../img/Dioxy/Dioxy46.jpeg'},
+    {id: 11, nombre: 'modelo 47', precio: 1500, image: '../img/Dioxy/Dioxy47.jpeg'},
+    {id: 12, nombre: 'modelo 48', precio: 1500, image: '../img/Dioxy/Dioxy48.jpeg'},
+    {id: 13, nombre: 'modelo 49', precio: 1500, image: '../img/Dioxy/Dioxy49.jpeg'},
+    {id: 14, nombre: 'modelo 50', precio: 1500, image: '../img/Dioxy/Dioxy50.jpeg'},
+    {id: 15, nombre: 'modelo 51', precio: 1500, image: '../img/Dioxy/Dioxy51.jpeg'},
+    {id: 16, nombre: 'modelo 52', precio: 1500, image: '../img/Dioxy/Dioxy52.jpeg'},
+    {id: 17, nombre: 'modelo 53', precio: 1500, image: '../img/Dioxy/Dioxy53.jpeg'},
+    {id: 18, nombre: 'modelo 54', precio: 1500, image: '../img/Dioxy/Dioxy54.jpeg'},
 ];
 
 let CARRITO = [];
@@ -221,6 +221,5 @@ window.addEventListener('load', () => {
 });
 
 renderizarProductos();
-
 
 //proximamente json con storage

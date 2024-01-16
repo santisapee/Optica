@@ -69,24 +69,24 @@ btnthx.onclick = ()=>{
 //funcion carrito
 
 const PRODUCTOS_LIST = [
-    {id: 1, nombre: 'modelo 1', precio: 1500, image: './img/Dioxy/Dioxy1.jpeg'},
-    {id: 2, nombre: 'modelo 2', precio: 1500, image: './img/Dioxy/Dioxy2.jpeg'},
-    {id: 3, nombre: 'modelo 3', precio: 1500, image: './img/Dioxy/Dioxy3.jpeg'},
-    {id: 4, nombre: 'modelo 4', precio: 1500, image: './img/Dioxy/Dioxy4.jpeg'},
-    {id: 5, nombre: 'modelo 5', precio: 1500, image: './img/Dioxy/Dioxy5.jpeg'},
-    {id: 6, nombre: 'modelo 6', precio: 1500, image: './img/Dioxy/Dioxy6.jpeg'},
-    {id: 7, nombre: 'modelo 7', precio: 1500, image: './img/Dioxy/Dioxy7.jpeg'},
-    {id: 8, nombre: 'modelo 8', precio: 1500, image: './img/Dioxy/Dioxy8.jpeg'},
-    {id: 9, nombre: 'modelo 9', precio: 1500, image: './img/Dioxy/Dioxy9.jpeg'},
-    {id: 10, nombre: 'modelo 10', precio: 1500, image: './img/Dioxy/Dioxy10.jpeg'},
-    {id: 11, nombre: 'modelo 11', precio: 1500, image: './img/Dioxy/Dioxy11.jpeg'},
-    {id: 12, nombre: 'modelo 12', precio: 1500, image: './img/Dioxy/Dioxy12.jpeg'},
-    {id: 13, nombre: 'modelo 13', precio: 1500, image: './img/Dioxy/Dioxy13.jpeg'},
-    {id: 14, nombre: 'modelo 14', precio: 1500, image: './img/Dioxy/Dioxy14.jpeg'},
-    {id: 15, nombre: 'modelo 15', precio: 1500, image: './img/Dioxy/Dioxy15.jpeg'},
-    {id: 16, nombre: 'modelo 16', precio: 1500, image: './img/Dioxy/Dioxy16.jpeg'},
-    {id: 17, nombre: 'modelo 17', precio: 1500, image: './img/Dioxy/Dioxy17.jpeg'},
-    {id: 18, nombre: 'modelo 18', precio: 1500, image: './img/Dioxy/Dioxy18.jpeg'},
+    {id: 1, nombre: 'modelo 1', precio: 1500, image: '/img/Dioxy/Dioxy1.jpeg'},
+    {id: 2, nombre: 'modelo 2', precio: 1500, image: '/img/Dioxy/Dioxy2.jpeg'},
+    {id: 3, nombre: 'modelo 3', precio: 1500, image: '/img/Dioxy/Dioxy3.jpeg'},
+    {id: 4, nombre: 'modelo 4', precio: 1500, image: '/img/Dioxy/Dioxy4.jpeg'},
+    {id: 5, nombre: 'modelo 5', precio: 1500, image: '/img/Dioxy/Dioxy5.jpeg'},
+    {id: 6, nombre: 'modelo 6', precio: 1500, image: '/img/Dioxy/Dioxy6.jpeg'},
+    {id: 7, nombre: 'modelo 7', precio: 1500, image: '/img/Dioxy/Dioxy7.jpeg'},
+    {id: 8, nombre: 'modelo 8', precio: 1500, image: '/img/Dioxy/Dioxy8.jpeg'},
+    {id: 9, nombre: 'modelo 9', precio: 1500, image: 'img/Dioxy/Dioxy9.jpeg'},
+    {id: 10, nombre: 'modelo 10', precio: 1500, image: '/img/Dioxy/Dioxy10.jpeg'},
+    {id: 11, nombre: 'modelo 11', precio: 1500, image: '/img/Dioxy/Dioxy11.jpeg'},
+    {id: 12, nombre: 'modelo 12', precio: 1500, image: '/img/Dioxy/Dioxy12.jpeg'},
+    {id: 13, nombre: 'modelo 13', precio: 1500, image: '/img/Dioxy/Dioxy13.jpeg'},
+    {id: 14, nombre: 'modelo 14', precio: 1500, image: '/img/Dioxy/Dioxy14.jpeg'},
+    {id: 15, nombre: 'modelo 15', precio: 1500, image: '/img/Dioxy/Dioxy15.jpeg'},
+    {id: 16, nombre: 'modelo 16', precio: 1500, image: '/img/Dioxy/Dioxy16.jpeg'},
+    {id: 17, nombre: 'modelo 17', precio: 1500, image: '../img/Dioxy/Dioxy17.jpeg'},
+    {id: 18, nombre: 'modelo 18', precio: 1500, image: '../img/Dioxy/Dioxy18.jpeg'},
 ];
 
 let CARRITO = [];
@@ -106,6 +106,8 @@ function renderizarProductos() {
         `;
         carritoElement.appendChild(card);
     });
+
+    cargarCarritoDesdeLocalStorage(); 
 }
 
 function agregarAlCarrito(idProducto) {
@@ -122,8 +124,8 @@ function agregarAlCarrito(idProducto) {
     }
 
     actualizarCarrito();
+    guardarCarritoEnLocalStorage(); 
 }
-
 
 function actualizarCarrito() {
     const carritoElement = document.getElementById('total');
@@ -152,18 +154,17 @@ function actualizarCarrito() {
     botonPedido.style.display = CARRITO.length > 0 ? 'block' : 'none';
 }
 
-
 function guardarCarritoEnLocalStorage() {
-    console.log('Antes de guardar en localStorage:', CARRITO);
-    localStorage.setItem('carrito', JSON.stringify(CARRITO));
-    console.log('Después de guardar en localStorage:', CARRITO);
+    localStorage.setItem('carrito', JSON.stringify({ productos: CARRITO }));
+    console.log('Carrito guardado en localStorage:', CARRITO);
 }
 
 function cargarCarritoDesdeLocalStorage() {
     const carritoGuardado = localStorage.getItem('carrito');
 
     if (carritoGuardado) {
-        CARRITO = JSON.parse(carritoGuardado);
+        const carritoParseado = JSON.parse(carritoGuardado) || [];
+        CARRITO = carritoParseado.productos || [];
         actualizarCarrito();
     }
 }
@@ -189,6 +190,7 @@ function cambiarCantidad(idProducto, operacion) {
     }
 
     actualizarCarrito();
+    guardarCarritoEnLocalStorage();  
 }
 
 function sumarTotal() {
@@ -197,26 +199,36 @@ function sumarTotal() {
     totalElement.innerHTML = `<div>Total: $${total.toFixed(0)}</div>`;
 }
 
-
 function borrarItemCarrito(idProducto) {
     const index = CARRITO.findIndex(producto => producto.id === idProducto);
 
     if (index !== -1) {
         CARRITO.splice(index, 1);
         actualizarCarrito();
+        guardarCarritoEnLocalStorage();  
     }
 }
 
 function hacerPedido() {
-    alert('¡Pedido realizado con éxito!');  // Puedes ajustar esto según tus necesidades
-    guardarCarritoEnLocalStorage();  // Guarda el carrito en el localStorage después de hacer el pedido
-    limpiarCarrito();  // Opcional: limpia el carrito después de hacer el pedido
+    alert('¡Pedido realizado con éxito!');
+    guardarCarritoEnLocalStorage();
+    limpiarCarrito();
+}
+
+function guardarPedidoEnLocalStorage() {
+    const pedido = { productos: CARRITO, fecha: new Date().toLocaleString() };
+    localStorage.setItem('pedido', JSON.stringify(pedido));
 }
 
 function limpiarCarrito() {
     CARRITO = [];
     actualizarCarrito();
 }
+
+window.addEventListener('load', () => {
+    cargarCarritoDesdeLocalStorage();
+    renderizarProductos();
+});
 
 renderizarProductos();
 

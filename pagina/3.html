@@ -67,122 +67,15 @@
       </div>
     
     <h2>NUESTRO CATÁLOGO</h2>
-    <form id="encargos">
-        <fieldset>
-            <label for="nombre">nombre:</label>
-            <input type="text" id="nombre">
-            <label for="cedula">cedula:</label>
-            <input type="text" id="cedula">
-            <label for="modelo">modelo:</label>
-            <input type="text" id="modelo">
-            <label for="cantidad">cantidad:</label>
-            <input type="text" id="cantidad">
-            <button id="btnthx">Hacer Pedido</button>
-        </fieldset>
-    </form>
     
-    <section class="contenedor">
-        <button class="popup-btn">ENCARGOS AL POR MAYOR</button>
-        <div class="contenido-popup">
-            <div class="mensaje-popup">
-                <h2>¿Queres hacer un pedido grande?</h2>
-                <p>¡Consultanos por WhatsApp con la palabra "MAYOR"!</p>
-                <p>Encargos de +100</p>
-                <button class="cerrar-popup">Cerrar</button>
-            </div>
+    <div id="carrito"></div>
+    <div id="total"></div>
+    <div id="final"></div>
+    <div id="botonPedidoContainer" style="text-align: center;">
+        <div id="botonPedido" style="display: none;">
+            <button onclick="hacerPedido()">Hacer Pedido</button>
         </div>
-        <div class="contenedor-items">
-            <div class="item">
-                <span class="titulo-item">Modelo 37</span>
-                <img src="../img/Dioxy/Dioxy37.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 38</span>
-                <img src="../img/Dioxy/Dioxy38.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div><div class="item">
-                <span class="titulo-item">Modelo 39</span>
-                <img src="../img/Dioxy/Dioxy39.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 40</span>
-                <img src="../img/Dioxy/Dioxy40.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 41</span>
-                <img src="../img/Dioxy/Dioxy41.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 42</span>
-                <img src="../img/Dioxy/Dioxy42.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 43</span>
-                <img src="../img/Dioxy/Dioxy43.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 44</span>
-                <img src="../img/Dioxy/Dioxy44.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 45</span>
-                <img src="../img/Dioxy/Dioxy45.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 46</span>
-                <img src="../img/Dioxy/Dioxy46.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 47</span>
-                <img src="../img/Dioxy/Dioxy47.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 48</span>
-                <img src="../img/Dioxy/Dioxy48.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 49</span>
-                <img src="../img/Dioxy/Dioxy49.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 50</span>
-                <img src="../img/Dioxy/Dioxy50.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 51</span>
-                <img src="../img/Dioxy/Dioxy51.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 52</span>
-                <img src="../img/Dioxy/Dioxy52.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 53</span>
-                <img src="../img/Dioxy/Dioxy53.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Modelo 54</span>
-                <img src="../img/Dioxy/Dioxy54.jpeg" alt="" class="img-item">
-                <span class="precio-item">$1.500</span>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <a href="#" class="float-button" target="_blank">
         <i class="fa fa-whatsapp"></i>
@@ -206,25 +99,50 @@
 
 
     <div class="cards">
-        <div class="card card-1">
-            <h2 class="card__title">¿TE GUSTO ALGÚN MODELO?</h2>
-            <p class="card__apply">
-                <a class="card__link">¡CONSULTÁNOS POR WhatsApp PARA CONSEGUIRLO!</a>
-            </p>       
-          </div>
           <div class="card card-4">
             <h2 class="card__title">¿Cómo Comprar?</h2>
             <p class="card__apply">
-                <a class="card__link">1 - Apretá el logo de WhatsApp de la derecha</a>
+                <a class="card__link">1 - Agrega al carrito tu producto y selecciona la cantidad</a>
             </p>
             <p class="card__apply">
-                <a class="card__link">2 - Mencioná que modelo/s querés</a>
+                <a class="card__link">2 - Sacale captura al carrito</a>
             </p>
             <p class="card__apply">
-                <a class="card__link">3 - Coordinamos tu pedido!</a>
+                <a class="card__link">3 - Apretá el logo de WhatsApp de la derecha</a>
+            </p>
+            <p class="card__apply">
+                <a class="card__link">4 - Mencioná que modelo/s querés y agrega la captura del carrito</a>
+            </p>
+            <p class="card__apply">
+                <a class="card__link">5 - Coordinamos tu pedido!</a>
             </p>
           </div>
     </div>
+
+    <form id="encargos">
+        <div class="contenido-popup">
+            <div class="mensaje-popup">
+                <h2>¿Queres hacer un pedido grande?</h2>
+                <p>¡Consultanos por WhatsApp con la palabra "MAYOR"!</p>
+                <p>Encargos de +100 unidades</p>
+                <button class="cerrar-popup">Cerrar</button>
+            </div>
+        </div>
+        <fieldset>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula">
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo">
+            <label for="cantidad">Cantidad:</label>
+            <input type="text" id="cantidad">
+            <button id="btnthx">Hacer Pedido</button>
+        </fieldset>
+        <section class="contenedor">
+            <button class="popup-btn">ENCARGOS AL POR MAYOR</button>
+        </section>
+    </form>
     
     <footer>
         <h2>REVIEWS CLIENTES</h2>   
@@ -380,6 +298,6 @@
         AOS.init();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
-    <script src="script2.js"></script> 
+    <script src="script3.js"></script> 
 </body>
 </html>
