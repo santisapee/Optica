@@ -68,6 +68,8 @@ btnthx.onclick = ()=>{
 
 //funcion carrito
 
+let CARRITO = [];
+
 const PRODUCTOS_LIST = [
     {id: 1, nombre: 'modelo 1', precio: 1500, image: './img/Dioxy/Dioxy1.jpeg'},
     {id: 2, nombre: 'modelo 2', precio: 1500, image: './img/Dioxy/Dioxy2.jpeg'},
@@ -87,9 +89,9 @@ const PRODUCTOS_LIST = [
     {id: 16, nombre: 'modelo 16', precio: 1500, image: './img/Dioxy/Dioxy16.jpeg'},
     {id: 17, nombre: 'modelo 17', precio: 1500, image: './img/Dioxy/Dioxy17.jpeg'},
     {id: 18, nombre: 'modelo 18', precio: 1500, image: './img/Dioxy/Dioxy18.jpeg'},
+    {id: 19, nombre: 'modelo 19', precio: 1500, image: './img/Dioxy/Dioxy19.jpeg'},
+    {id: 20, nombre: 'modelo 20', precio: 1500, image: './img/Dioxy/Dioxy20.jpeg'},
 ];
-
-let CARRITO = [];
 
 function renderizarProductos() {
     const carritoElement = document.getElementById('carrito');
@@ -107,7 +109,7 @@ function renderizarProductos() {
         carritoElement.appendChild(card);
     });
 
-    cargarCarritoDesdeLocalStorage(); 
+    cargarCarritoDesdeLocalStorage();
 }
 
 function agregarAlCarrito(idProducto) {
@@ -124,7 +126,7 @@ function agregarAlCarrito(idProducto) {
     }
 
     actualizarCarrito();
-    guardarCarritoEnLocalStorage(); 
+    guardarCarritoEnLocalStorage();
 }
 
 function actualizarCarrito() {
@@ -156,7 +158,6 @@ function actualizarCarrito() {
 
 function guardarCarritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify({ productos: CARRITO }));
-    console.log('Carrito guardado en localStorage:', CARRITO);
 }
 
 function cargarCarritoDesdeLocalStorage() {
@@ -190,7 +191,7 @@ function cambiarCantidad(idProducto, operacion) {
     }
 
     actualizarCarrito();
-    guardarCarritoEnLocalStorage();  
+    guardarCarritoEnLocalStorage();
 }
 
 function sumarTotal() {
@@ -205,19 +206,20 @@ function borrarItemCarrito(idProducto) {
     if (index !== -1) {
         CARRITO.splice(index, 1);
         actualizarCarrito();
-        guardarCarritoEnLocalStorage();  
+        guardarCarritoEnLocalStorage();
     }
 }
 
 function hacerPedido() {
-    alert('¡Pedido realizado con éxito!');
+    Swal.fire({
+        icon: 'success',
+        title: '¡Pedido realizado con éxito!',
+        showConfirmButton: false,
+        timer: 1500
+    });
+
     guardarCarritoEnLocalStorage();
     limpiarCarrito();
-}
-
-function guardarPedidoEnLocalStorage() {
-    const pedido = { productos: CARRITO, fecha: new Date().toLocaleString() };
-    localStorage.setItem('pedido', JSON.stringify(pedido));
 }
 
 function limpiarCarrito() {
@@ -225,11 +227,19 @@ function limpiarCarrito() {
     actualizarCarrito();
 }
 
+function obtenerItemsEnCarrito() {
+    return CARRITO.map(item => {
+        return {
+            id: item.id,
+            nombre: item.nombre,
+            cantidad: item.cantidad,
+            precio: item.precio
+        };
+    });
+}
+
 window.addEventListener('load', () => {
     cargarCarritoDesdeLocalStorage();
     renderizarProductos();
 });
 
-renderizarProductos();
-
-//proximamente json con storage
